@@ -19,8 +19,10 @@ ENV JOURNALING yes
 RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 VOLUME /data/db
 
+
 COPY run.sh /run.sh
 COPY set_mongodb_password.sh ./set_mongodb_password.sh
+RUN chown 755 /run.sh
 
 EXPOSE 27017
 CMD ["/run.sh"]
