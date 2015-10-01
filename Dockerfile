@@ -24,5 +24,5 @@ COPY run.sh /run.sh
 COPY set_mongodb_password.sh ./set_mongodb_password.sh
 RUN chmod u+x /run.sh
 
-EXPOSE 27018
+EXPOSE 27017
 CMD ["/run.sh"]
