@@ -7,10 +7,10 @@ while [[ RET -ne 0 ]]; do
 done
 
 echo "=> Creating an admin user in MongoDB"
-mongo admin --eval "db.createUser({user: 'admin', pwd: 'admin', roles:['root']});"
-mongo admin --username "admin" --password "admin" --eval "db.getSiblingDB('sdgtlctest').createUser({user: 'sdg', pwd: '1234', roles:['dbAdmin']});"
-mongo admin --username "admin" --password "admin" --eval "db.getSiblingDB('sdg').createUser({user: 'sdg', pwd: '1234', roles:['dbAdmin']});"
-mongo admin --username "admin" --password "admin" --eval "db.getSiblingDB('sdgtlc').createUser({user: 'sdg', pwd: '1234', roles:['dbAdmin']});"
+mongo admin --eval "db.createUser({user: 'admin', pwd: '$PWD_ROOT', roles:['root']});"
+mongo admin -u admin -p $PWD_ROOT --eval "db.getSiblingDB('sdgtlctest').createUser({user: 'sdg', pwd: '$PWD_SDG', roles:['dbAdmin']});"
+mongo admin -u admin -p $PWD_ROOT --eval "db.getSiblingDB('sdg').createUser({user: 'sdg', pwd: '$PWD_SDG', roles:['dbAdmin']});"
+mongo admin -u admin -p $PDW_ROOT --eval "db.getSiblingDB('sdgtlc').createUser({user: 'sdg', pwd: '$PWD_SDG', roles:['dbAdmin']});"
 
 
 echo "=> Done!"
