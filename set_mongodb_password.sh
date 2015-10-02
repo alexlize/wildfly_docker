@@ -7,6 +7,7 @@ while [[ RET -ne 0 ]]; do
 done
 
 echo "=> Creating an admin user in MongoDB"
+mongo admin --eval "db.createUser({user: 'admin', pwd: 'admin', roles:[{role:'root',db:'admin'}]});"
 mongo sdgtlctest --eval "db.createUser({user: 'sdg', pwd: '1234', roles:[{role:'userAdmin',db:'sdgtlctest'}]});"
 
 echo "=> Done!"
