@@ -8,7 +8,7 @@ done
 
 echo "=> Creating an admin user in MongoDB"
 mongo admin --eval "db.createUser({user: 'admin', pwd: 'admin', roles:['root']});"
-mongo admin --username "admin" --password "admin" --eval "use sdgtlctest;db.createUser({user: 'sdg', pwd: '1234', roles:['userAdmin']});"
+mongo admin --username "admin" --password "admin" --eval "db.getSiblingDB('sdgtlctest').createUser({user: 'sdg', pwd: '1234', roles:['dbAdmin']});"
 
 
 echo "=> Done!"
