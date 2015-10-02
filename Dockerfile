@@ -10,15 +10,11 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     echo "mongodb-org-mongos hold" | dpkg --set-selections && \
     echo "mongodb-org-tools hold" | dpkg --set-selections
 
-VOLUME /data/lib
+VOLUME /data/db
 
 ENV AUTH yes
 ENV STORAGE_ENGINE wiredTiger
 ENV JOURNALING yes
-
-RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
-VOLUME /data/db
-
 
 COPY run.sh /run.sh
 COPY set_mongodb_password.sh ./set_mongodb_password.sh

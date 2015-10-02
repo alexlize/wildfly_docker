@@ -10,10 +10,11 @@ echo "=> Creating an admin user in MongoDB"
 mongo sdgtlctest --eval "db.createUser({user: 'sdg', pwd: '1234', roles:[{role:'userAdmin',db:'sdgtlctest'}]});"
 
 echo "=> Done!"
+touch /data/db/.mongodb_password_set
 
 echo "========================================================================"
 echo "You can now connect to this MongoDB server using:"
 echo ""
-echo "    mongo admin -u sdg -p 1234 --host <host> --port <port>"
+echo "    mongo sdgtlctest -u sdg -p 1234 --host <host> --port <port>"
 echo ""
 echo "========================================================================"
