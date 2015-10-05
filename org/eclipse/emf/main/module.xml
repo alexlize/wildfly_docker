@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<module xmlns="urn:jboss:module:1.1" name="org.eclipse.emf">
+
+    <resources>
+        <resource-root path="org.eclipse.emf.common-2.10.0-v20140514-1158.jar"/>
+        <resource-root path="org.eclipse.emf.ecore.xmi-2.10.0-v20140514-1158.jar"/>
+        <resource-root path="org.eclipse.emf.ecore-2.10.0-v20140514-1158.jar"/>
+    </resources>
+</module>
