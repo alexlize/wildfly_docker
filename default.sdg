@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdg:SDGConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdg="http://www.swarco.com/sdg/1.0" id="default.sdg.config.tests" name="Default Swarco Device Gateway Configuration for testing purposes" active="true">
-  <configurations xsi:type="sdg:DatabaseConfiguration" id="sdg.mongo.local" name="SDG Mongo DB Connection for testing TLC Data" active="true" type="MONGODB" host="mongo01" port="27017" user="sdg" password="1234" database="sdgtlctest"/>  
+  <configurations xsi:type="sdg:DatabaseConfiguration" id="sdg.mongo.local" name="SDG Mongo DB Connection for testing TLC Data" active="true" type="MONGODB" host="mongo02" port="27017" user="sdg" password="1234" database="sdgtlctest"/>  
   <configurations xsi:type="sdg:FileConfiguration" id="sdg.config" name="SDG Configuration" active="true" default="true" baseLocation="../sdg/configuration/"/>
 </sdg:SDGConfiguration>
